@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<!-- ======================================================================= -->
+<!-- ==                  KATEGORI UMUM & PENDAHULUAN                      == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>HALO</pattern>
+    <template>
+        Halo! Saya adalah asisten virtual yang diprogram untuk menjawab pertanyaan mengenai Jurnal "Perbandingan Kinerja IndoBERT, IndoRoBERTa, dan IndoBERTweet dalam Deteksi Ujaran Kebencian". Apa yang ingin Anda ketahui?
+    </template>
+</category>
+
+<category>
+    <pattern>SIAPA PENULIS JURNAL INI</pattern>
+    <template>
+        Jurnal ini ditulis oleh Jason Permana, Albert, dan Kevin Kwang dari Program Studi Teknik Informatika, Fakultas Teknologi Informasi, Universitas Tarumanagara, Indonesia.
+    </template>
+</category>
+
+<category>
+    <pattern>APA JUDUL JURNAL INI</pattern>
+    <template>
+        Judulnya adalah "Perbandingan Kinerja IndoBERT, IndoRoBERTa, dan IndoBERTweet dalam Deteksi Ujaran Kebencian".
+    </template>
+</category>
+
+<category>
+    <pattern>APA TOPIK UTAMA PENELITIAN INI</pattern>
+    <template>
+        Topik utama penelitian ini adalah membandingkan kinerja tiga model Transformer, yaitu IndoBERT, IndoRoBERTa, dan IndoBERTweet, dalam tugas deteksi ujaran kebencian di media sosial berbahasa Indonesia.
+    </template>
+</category>
+
+<category>
+    <pattern>MENGAPA PENELITIAN INI PENTING</pattern>
+    <template>
+        Penelitian ini penting karena deteksi ujaran kebencian di media sosial Indonesia menjadi tantangan akibat penggunaan bahasa informal, singkatan, dan variasi penulisan. Penelitian ini bertujuan untuk menemukan model yang paling optimal untuk mengatasi masalah tersebut secara efektif dan efisien.
+    </template>
+</category>
+
+<category>
+    <pattern>APA TUJUAN DARI PENELITIAN INI</pattern>
+    <template>
+        Tujuan penelitian ini adalah untuk membandingkan kemampuan IndoBERT, IndoRoBERTa, dan IndoBERTweet dalam mendeteksi ujaran kebencian. Selain itu, penelitian ini bertujuan untuk mengetahui kelebihan dan keterbatasan masing-masing model serta memberikan panduan dalam memilih model yang paling sesuai untuk moderasi konten otomatis di media sosial Indonesia.
+    </template>
+</category>
+
+<!-- ======================================================================= -->
+<!-- ==                   DETAIL MODEL-MODEL YANG DIUJI                   == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>MODEL APA SAJA YANG DIBANDINGKAN</pattern>
+    <template>
+        Penelitian ini membandingkan tiga model bahasa pra-terlatih berbasis Transformer, yaitu: IndoBERT, IndoRoBERTa, dan IndoBERTweet.
+    </template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG INDOBERT</pattern>
+    <template>
+        IndoBERT adalah model BERT (Bidirectional Encoder Representations from Transformers) yang dilatih khusus menggunakan data bahasa Indonesia, baik formal maupun sehari-hari. Model ini dilatih dengan total 220 juta kata dan dirancang untuk memahami konteks kalimat secara dua arah.
+    </template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG INDOROBERTA</pattern>
+    <template>
+        IndoRoBERTa merupakan implementasi arsitektur RoBERTa (Robustly Optimized BERT Pretraining Approach) yang dilatih secara spesifik menggunakan data berbahasa Indonesia. RoBERTa adalah pengembangan dari BERT yang dioptimalisasi dengan menghapus tugas Next Sentence Prediction (NSP) dan menerapkan teknik *dynamic masking* untuk meningkatkan performa dan pemahaman kontekstualnya.
+    </template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG INDOBERTWEET</pattern>
+    <template>
+        IndoBERTweet adalah model berbasis arsitektur BERT yang secara khusus dikembangkan untuk memahami karakteristik unik teks berbahasa Indonesia dari media sosial, terutama Twitter. Model ini dilatih menggunakan data yang mencakup bahasa santai, singkatan, emotikon, dan slang, sehingga memiliki potensi lebih unggul dalam tugas yang melibatkan teks informal.
+    </template>
+</category>
+
+<category>
+    <pattern>APA PERBEDAAN ANTARA INDOBERT DAN INDOROBERTA</pattern>
+    <template>
+        Meskipun keduanya berbasis arsitektur BERT, ada beberapa perbedaan fundamental antara IndoBERT dan IndoRoBERTa berdasarkan jurnal:
+        <ul>
+            <li><b>Optimisasi Pelatihan:</b> IndoRoBERTa adalah hasil pengembangan dari BERT yang dioptimalkan. Perbedaan utamanya adalah IndoRoBERTa menghapus tugas pra-pelatihan <i>Next Sentence Prediction</i> (NSP), yang terbukti meningkatkan performa.</li>
+            <li><b>Teknik Masking:</b> IndoBERT menggunakan <i>static masking</i> (token yang ditutupi selalu sama), sementara IndoRoBERTa menerapkan <i>dynamic masking</i>, di mana pola token yang ditutupi berubah di setiap iterasi. Ini membantu model belajar dari variasi data yang lebih kaya.</li>
+            <li><b>Skala Pelatihan:</b> Jurnal menyebutkan bahwa RoBERTa (dan implementasinya, IndoRoBERTa) umumnya dilatih dengan volume data yang lebih besar dan durasi yang lebih lama dibandingkan BERT.</li>
+        </ul>
+    </template>
+</category>
+
+<!-- ======================================================================= -->
+<!-- ==                       METODOLOGI PENELITIAN                       == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>DATASET APA YANG DIGUNAKAN</pattern>
+    <template>
+        Penelitian ini menggunakan dataset bernama "Indonesian Hate Speech Superset". Dataset ini merupakan gabungan dari berbagai korpus ujaran kebencian berbahasa Indonesia yang tersedia secara publik hingga April 2024.
+    </template>
+</category>
+
+<category>
+    <pattern>BERAPA BANYAK DATA DALAM DATASET</pattern>
+    <template>
+        Dataset tersebut terdiri dari 14.306 entri teks. Setelah diproses, persebaran kelasnya terdiri dari 8.256 data bukan ujaran kebencian dan 6.050 data ujaran kebencian.
+    </template>
+</category>
+
+<category>
+    <pattern>BAGAIMANA DATA DIPROSES</pattern>
+    <template>
+        Data diproses melalui beberapa tahap:
+        1. Pengumpulan Data: Menggunakan dataset Indonesian Hate Speech Superset.
+        2. Prapemrosesan Data: Dataset dibagi menjadi data latih dan uji dengan tiga variasi rasio (80:20, 70:30, 60:40). Seluruh teks kemudian ditokenisasi menggunakan tokenizer dari masing-masing model.
+        3. Pelatihan Model: Ketiga model dilatih dengan hyperparameter yang sama untuk perbandingan yang adil.
+    </template>
+</category>
+
+<category>
+    <pattern>METRIK EVALUASI APA YANG DIGUNAKAN</pattern>
+    <template>
+        Evaluasi model dilakukan menggunakan tiga metrik utama: Akurasi (Accuracy), F1-Score, dan AUC (Area Under the ROC Curve). Metrik ini dipilih untuk memberikan gambaran komprehensif mengenai kinerja model dari berbagai sisi.
+    </template>
+</category>
+<category>
+    <pattern>METRIK EVALUASI APA YANG DIPAKAI</pattern>
+    <template><srai>METRIK EVALUASI APA YANG DIGUNAKAN</srai></template>
+</category>
+
+<category>
+    <pattern>APA SAJA SKENARIO PENGUJIANNYA</pattern>
+    <template>
+        Pengujian dilakukan pada tiga skenario pembagian data latih dan uji yang berbeda, yaitu dengan rasio 80:20, 70:30, dan 60:40. Ini bertujuan untuk menilai stabilitas kinerja model pada kondisi data yang bervariasi.
+    </template>
+</category>
+
+
+<!-- ======================================================================= -->
+<!-- ==                           HASIL PENELITIAN                          == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>BAGAIMANA HASIL PENELITIANNYA SECARA UMUM</pattern>
+    <template>
+        Hasil penelitian secara konsisten menunjukkan bahwa IndoBERTweet memiliki performa tertinggi di semua skenario pengujian. Keunggulan ini diatribusikan pada data pra-pelatihannya yang spesifik untuk media sosial, yang memungkinkannya lebih baik dalam memahami teks informal.
+    </template>
+</category>
+
+<category>
+    <pattern>MODEL MANA YANG PALING AKURAT</pattern>
+    <template>
+        IndoBERTweet secara konsisten menjadi model yang paling akurat di semua skenario. Akurasi puncaknya mencapai 90.78% pada skenario pembagian data 80:20. Bahkan pada skenario data latih paling sedikit (60:40), akurasinya masih di atas 90%, yaitu 90.18%.
+    </template>
+</category>
+<category>
+    <pattern>MODEL MANA YANG KINERJANYA PALING TINGGI</pattern>
+    <template><srai>MODEL MANA YANG PALING AKURAT</srai></template>
+</category>
+
+<category>
+    <pattern>BERAPA AKURASI TERTINGGI YANG DICAPAI</pattern>
+    <template>
+        Akurasi tertinggi yang dicapai dalam penelitian ini adalah <b>90.78%</b>. Hasil ini diperoleh oleh model IndoBERTweet pada skenario pengujian dengan rasio data latih-uji sebesar 80:20.
+    </template>
+</category>
+
+<category>
+    <pattern>BERAPA AKURASI INDOBERT</pattern>
+    <template>
+        Akurasi IndoBERT adalah 88.50% (rasio 80:20), 87.98% (rasio 70:30), dan 88.10% (rasio 60:40).
+    </template>
+</category>
+
+<category>
+    <pattern>BERAPA AKURASI INDOROBERTA</pattern>
+    <template>
+        Akurasi IndoRoBERTa adalah 88.99% (rasio 80:20), 88.00% (rasio 70:30), dan 87.17% (rasio 60:40).
+    </template>
+</category>
+
+<category>
+    <pattern>BERAPA AKURASI INDOBERTWEET</pattern>
+    <template>
+        IndoBERTweet memiliki akurasi tertinggi: 90.78% (rasio 80:20), 90.66% (rasio 70:30), dan 90.18% (rasio 60:40).
+    </template>
+</category>
+
+<category>
+    <pattern>BAGAIMANA DENGAN EFISIENSI WAKTU PELATIHAN</pattern>
+    <template>
+        Dari segi efisiensi, IndoBERT dan IndoBERTweet secara konsisten lebih cepat daripada IndoRoBERTa. Sebagai contoh, pada skenario 80:20, IndoBERTweet menyelesaikan pelatihan dalam 548 detik, lebih cepat dari IndoRoBERTa yang membutuhkan 592 detik. IndoBERT menjadi yang tercepat di dua skenario (70:30 dan 60:40).
+    </template>
+</category>
+<category>
+    <pattern>BANDINGKAN EFISIENSI WAKTU KETIGA MODEL</pattern>
+    <template><srai>BAGAIMANA DENGAN EFISIENSI WAKTU PELATIHAN</srai></template>
+</category>
+
+<category>
+    <pattern>MODEL MANA YANG PALING LAMA WAKTU PELATIHANNYA</pattern>
+    <template>
+        IndoRoBERTa secara konsisten menjadi model yang paling lambat dalam pelatihan di ketiga skenario.
+    </template>
+</category>
+
+<category>
+    <pattern>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 80 20</pattern>
+    <template>
+        Pada skenario pembagian data 80:20 (data latih terbesar), hasil evaluasi menunjukkan dominasi IndoBERTweet. Berikut rinciannya:
+        <ul>
+            <li><b>IndoBERTweet:</b> Akurasi 90.78%, F1-Score 90.78%. (Performa terbaik)</li>
+            <li><b>IndoRoBERTa:</b> Akurasi 88.99%, F1-Score 88.98%.</li>
+            <li><b>IndoBERT:</b> Akurasi 88.50%, F1-Score 88.53%.</li>
+        </ul>
+    </template>
+</category>
+
+<category>
+    <pattern>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 70 30</pattern>
+    <template>
+        Pada skenario pembagian data 70:30, IndoBERTweet tetap unggul meskipun jumlah data latih berkurang:
+        <ul>
+            <li><b>IndoBERTweet:</b> Akurasi 90.66%, F1-Score 90.66%. (Performa terbaik)</li>
+            <li><b>IndoRoBERTa:</b> Akurasi 88.00%, F1-Score 87.96%.</li>
+            <li><b>IndoBERT:</b> Akurasi 87.98%, F1-Score 87.98%.</li>
+        </ul>
+    </template>
+</category>
+
+<category>
+    <pattern>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 60 40</pattern>
+    <template>
+        Bahkan pada skenario dengan data latih paling sedikit (60:40), IndoBERTweet menunjukkan kemampuan generalisasi yang unggul:
+        <ul>
+            <li><b>IndoBERTweet:</b> Akurasi 90.18%, F1-Score 90.18%. (Performa terbaik)</li>
+            <li><b>IndoRoBERTa:</b> Akurasi 87.17%, F1-Score 87.14%.</li>
+            <li><b>IndoBERT:</b> Akurasi 88.10%, F1-Score 88.08%.</li>
+        </ul>
+    </template>
+</category>
+
+<!-- ======================================================================= -->
+<!-- ==                  PERBANDINGAN DAN KESIMPULAN                      == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>APA PERBANDINGAN KINERJA KETIGA MODEL</pattern>
+    <template>
+        Secara ringkas:
+        1.  <b>IndoBERTweet</b>: Performa tertinggi di semua skenario dari segi akurasi, F1-Score, dan AUC. Waktu pelatihannya juga sangat kompetitif.
+        2.  <b>IndoBERT dan IndoRoBERTa</b>: Menunjukkan kinerja yang kuat dan stabil, namun tidak melampaui IndoBERTweet. Keduanya berfungsi sebagai baseline yang kuat.
+        3.  <b>Efisiensi</b>: IndoBERT adalah yang tercepat di dua dari tiga skenario, namun IndoBERTweet menunjukkan keseimbangan terbaik antara akurasi superior dan efisiensi tinggi.
+    </template>
+</category>
+
+<category>
+    <pattern>MENGAPA INDOBERTWEET LEBIH UNGGUL</pattern>
+    <template>
+        Keunggulan IndoBERTweet diatribusikan pada keselarasan domain data pra-pelatihannya. Model ini dilatih pada korpus teks dari media sosial Twitter berbahasa Indonesia, yang karakteristik bahasanya (informal, slang) sangat relevan dengan dataset ujaran kebencian yang digunakan dalam penelitian.
+    </template>
+</category>
+
+<category>
+    <pattern>MENGAPA INDOBERTWEET DIANGGAP PALING OPTIMAL</pattern>
+    <template>
+        IndoBERTweet dianggap sebagai model paling optimal karena kombinasi dua keunggulan utamanya:
+        <ol>
+            <li><b>Akurasi Superior:</b> Secara konsisten, IndoBERTweet menghasilkan akurasi, F1-Score, dan AUC tertinggi di semua skenario pengujian. Ini karena data pra-pelatihannya berasal langsung dari media sosial (Twitter), sehingga sangat cocok untuk memahami bahasa informal, slang, dan singkatan yang umum dalam ujaran kebencian.</li>
+            <li><b>Efisiensi Tinggi:</b> Selain paling akurat, waktu pelatihannya juga sangat kompetitif. Model ini tidak hanya unggul dalam performa, tetapi juga efisien secara komputasi, menjadikannya pilihan yang praktis untuk implementasi di dunia nyata.</li>
+        </ol>
+    </template>
+</category>
+
+<category>
+    <pattern>APA KESIMPULAN DARI PENELITIAN INI</pattern>
+    <template>
+        Kesimpulannya adalah IndoBERTweet terbukti menjadi model yang paling optimal untuk tugas deteksi ujaran kebencian dalam konteks media sosial Indonesia. Model ini tidak hanya memberikan akurasi prediktif tertinggi secara konsisten, tetapi juga melakukannya dengan efisiensi waktu pelatihan yang sangat baik. Oleh karena itu, IndoBERTweet direkomendasikan untuk implementasi sistem deteksi ujaran kebencian.
+    </template>
+</category>
+<category>
+    <pattern>APA KESIMPULAN DARI JURNAL TERSEBUT</pattern>
+    <template><srai>APA KESIMPULAN DARI PENELITIAN INI</srai></template>
+</category>
+
+
+<!-- ======================================================================= -->
+<!-- ==                      INTERAKSI TAMBAHAN                           == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>TERIMA KASIH</pattern>
+    <template>
+        Sama-sama! Senang bisa membantu. Apakah ada hal lain yang ingin Anda tanyakan mengenai jurnal ini?
+    </template>
+</category>
+
+<category>
+    <pattern>TIDAK ADA</pattern>
+    <template>
+        Baik. Jika Anda memiliki pertanyaan lain nanti, jangan ragu untuk bertanya. Sampai jumpa!
+    </template>
+</category>
+
+<!-- ======================================================================= -->
+<!-- ==           PATTERN TAMBAHAN DARI REKOMENDASI FALLBACK             == -->
+<!-- ======================================================================= -->
+
+<!-- === Kelompok: Informasi Umum === -->
+
+<category>
+    <pattern>APA TOPIK UTAMANYA</pattern>
+    <template><srai>APA TOPIK UTAMA PENELITIAN INI</srai></template>
+</category>
+
+<category>
+    <pattern>KESIMPULANNYA APA</pattern>
+    <template><srai>APA KESIMPULAN DARI PENELITIAN INI</srai></template>
+</category>
+
+<category>
+    <pattern>APA KESIMPULANNYA</pattern>
+    <template><srai>APA KESIMPULAN DARI PENELITIAN INI</srai></template>
+</category>
+
+<category>
+    <pattern>APA KESIMPULAN JURNAL TERSEBUT</pattern>
+    <template><srai>APA KESIMPULAN DARI PENELITIAN INI</srai></template>
+</category>
+
+<category>
+    <pattern>SIAPA SAJA PENULIS JURNAL INI</pattern>
+    <template><srai>SIAPA PENULIS JURNAL INI</srai></template>
+</category>
+
+<category>
+    <pattern>SIAPA PENULISNYA</pattern>
+    <template><srai>SIAPA PENULIS JURNAL INI</srai></template>
+</category>
+
+
+<!-- === Kelompok: Model Terbaik === -->
+
+<category>
+    <pattern>MODEL MANA YANG KINERJANYA PALING TINGGI</pattern>
+    <template><srai>MODEL MANA YANG PALING AKURAT</srai></template>
+</category>
+
+<category>
+    <pattern>MODEL PALING OPTIMAL APA</pattern>
+    <template><srai>MENGAPA INDOBERTWEET DIANGGAP PALING OPTIMAL</srai></template>
+</category>
+
+<category>
+    <pattern>MENGAPA MODEL TERSEBUT PALING OPTIMAL</pattern>
+    <template><srai>MENGAPA INDOBERTWEET DIANGGAP PALING OPTIMAL</srai></template>
+</category>
+
+
+<!-- === Kelompok: Dataset === -->
+
+<category>
+    <pattern>MENGAPA MEMILIH DATASET TERSEBUT</pattern>
+    <template><srai>DATASET APA YANG DIGUNAKAN</srai></template>
+</category>
+
+<category>
+    <pattern>DETAIL DATASET APA</pattern>
+    <template><srai>DATASET APA YANG DIGUNAKAN</srai></template>
+</category>
+
+
+<!-- === Kelompok: Evaluasi === -->
+
+<category>
+    <pattern>METRIK APA SAJA YANG DIPAKAI</pattern>
+    <template><srai>METRIK EVALUASI APA YANG DIPAKAI</srai></template>
+</category>
+    
+<category>
+    <pattern>BERAPA NILAI AKURASI TERTINGGI</pattern>
+    <template><srai>BERAPA AKURASI TERTINGGI YANG DICAPAI</srai></template>
+</category>
+
+<category>
+    <pattern>SEBERAPA AKURAT MODEL TERBAIK</pattern>
+    <template><srai>BERAPA AKURASI TERTINGGI YANG DICAPAI</srai></template>
+</category>
+
+
+<!-- === Kelompok: Perbandingan === -->
+
+<category>
+    <pattern>BANDINGKAN KINERJA MODEL</pattern>
+    <template><srai>APA PERBANDINGAN KINERJA KETIGA MODEL</srai></template>
+</category>
+
+<category>
+    <pattern>BANDINGKAN WAKTU PELATIHAN</pattern>
+    <template><srai>BANDINGKAN EFISIENSI WAKTU KETIGA MODEL</srai></template>
+</category>
+
+<category>
+    <pattern>APA PERBANDINGAN KINERJA</pattern>
+    <template><srai>APA PERBANDINGAN KINERJA KETIGA MODEL</srai></template>
+</category>
+
+<category>
+    <pattern>MANA YANG PALING CEPAT DILATIH</pattern>
+    <template><srai>MODEL MANA YANG PALING LAMA WAKTU PELATIHANNYA</srai></template>
+</category>
+
+
+<!-- === Kelompok: Skenario Pengujian === -->
+
+<category>
+    <pattern>HASIL PENGUJIAN PADA 8020</pattern>
+    <template><srai>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 80 20</srai></template>
+</category>
+
+<category>
+    <pattern>HASIL PENGUJIAN PADA 7030</pattern>
+    <template><srai>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 70 30</srai></template>
+</category>
+
+<category>
+    <pattern>HASIL PENGUJIAN PADA 6040</pattern>
+    <template><srai>BAGAIMANA HASIL PENGUJIAN PADA SKENARIO DATA 60 40</srai></template>
+</category>
+
+<!-- === Kelompok: Model Detail === -->
+
+<category>
+    <pattern>APA ITU INDOBERTWEET</pattern>
+    <template><srai>JELASKAN TENTANG INDOBERTWEET</srai></template>
+</category>
+
+<category>
+    <pattern>APA ITU INDOROBERTA</pattern>
+    <template><srai>JELASKAN TENTANG INDOROBERTA</srai></template>
+</category>
+
+<category>
+    <pattern>APA ITU INDOBERT</pattern>
+    <template><srai>JELASKAN TENTANG INDOBERT</srai></template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG MODEL INDOBERTWEET</pattern>
+    <template><srai>JELASKAN TENTANG INDOBERTWEET</srai></template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG MODEL INDOROBERTA</pattern>
+    <template><srai>JELASKAN TENTANG INDOROBERTA</srai></template>
+</category>
+
+<category>
+    <pattern>JELASKAN TENTANG MODEL INDOBERT</pattern>
+    <template><srai>JELASKAN TENTANG INDOBERT</srai></template>
+</category>
+
+
+
+<!-- ======================================================================= -->
+<!-- ==        KATEGORI FALLBACK DINAMIS DENGAN SARAN PERTANYAAN        == -->
+<!-- ======================================================================= -->
+
+<category>
+    <pattern>*</pattern>
+    <template>
+        Maaf, saya tidak yakin memahami pertanyaan Anda. Fokus saya adalah pada Jurnal "Perbandingan Kinerja IndoBERT, IndoRoBERTa, dan IndoBERTweet".
+
+        <random>
+            <li>
+                Coba ajukan pertanyaan spesifik seperti:
+                <ul>
+                    <li>"Apa topik utama penelitian ini?"</li>
+                    <li>"Model mana yang kinerjanya paling tinggi?"</li>
+                    <li>"Apa kesimpulan dari jurnal tersebut?"</li>
+                </ul>
+            </li>
+            <li>
+                Anda bisa bertanya tentang detail teknis, misalnya:
+                <ul>
+                    <li>"Jelaskan tentang model IndoBERTweet."</li>
+                    <li>"Dataset apa yang digunakan?"</li>
+                    <li>"Metrik evaluasi apa yang dipakai?"</li>
+                </ul>
+            </li>
+            <li>
+                Untuk mendapatkan jawaban terbaik, coba tanyakan perbandingan antar model, contohnya:
+                <ul>
+                    <li>"Bandingkan efisiensi waktu ketiga model."</li>
+                    <li>"Mengapa IndoBERTweet dianggap paling optimal?"</li>
+                    <li>"Berapa akurasi tertinggi yang dicapai?"</li>
+                </ul>
+            </li>
+            <li>
+                Saya bisa menjawab pertanyaan seperti ini:
+                <ul>
+                    <li>"Siapa saja penulis jurnal ini?"</li>
+                    <li>"Apa perbedaan antara IndoBERT dan IndoRoBERTa?"</li>
+                    <li>"Bagaimana hasil pengujian pada skenario data 80 20?"</li>
+                </ul>
+            </li>
+        </random>
+    </template>
+</category>
+
+</aiml>
